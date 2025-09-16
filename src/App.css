@@ -1,0 +1,293 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.body {
+  font-family: 'Arial', sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #2058ac;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Basic Styling */
+/* Basic Styling */
+/* General button styles */
+button {
+  background-color: #ffc107; /* Parent button color */
+  color: #010308; /* Text color for parent buttons */
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 12px; /* Rounded corners */
+  cursor: pointer;
+  position: relative; /* Ensures positioning for submenus */
+  width: 100%; /* Ensures buttons span the full width of the container */
+  text-align: left;
+}
+
+/* Hover effect for parent button */
+button:hover {
+  background-color: #e0a800; /* Slightly darker hover color for parent button */
+}
+
+/* Root-level menu styling */
+.root-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.root-menu > li {
+  position: relative;
+  margin: 5px 0;
+}
+
+/* Submenu (dropdown) styling */
+.subMenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Position to the right of the parent button */
+  z-index: 1000;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  width: 200px;
+}
+
+/* Show immediate children dropdown on hover of the parent button */
+.dropdown:hover .subMenu {
+  display: block;
+}
+
+/* Styling for child submenu items */
+.subMenu button {
+  background-color: #ffc107; /* Matches the parent button color */
+  border: none;
+  padding: 8px 10px;
+  border-radius: 12px;
+  margin: 2px 0;
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  color: #010308; /* Text color for child buttons */
+}
+
+/* Hover effect for child buttons */
+.subMenu button:hover {
+  background-color: #e0a800; /* Slightly darker hover color for child button */
+}
+
+/* Ensure child buttons are styled correctly even when linked */
+.subMenu button a {
+  color: #010308;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+/* Remove underline and change color when hovered */
+.subMenu button a:hover {
+  text-decoration: none;
+  color: #010308;
+}
+
+/* Submenus of submenus (nested dropdowns) */
+.subMenu .subMenu {
+  display: none; /* Hide nested submenus by default */
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 1px; /* Small gap between parent and child */
+  background-color: #ffc107; /* Matches parent button color */
+  padding: 10px;
+}
+
+/* Show nested submenu on hover of the parent button */
+.subMenu > button:hover + .subMenu {
+  display: block;
+}
+
+.news-item {
+  font-size: 16px;
+  font-weight: normal;
+  position: relative;
+}
+
+.new-sticker {
+  background-color: #ff0000; /* Red background for the sticker */
+  color: white; /* White text color */
+  font-weight: bold;
+  padding: 2px 8px;
+  font-size: 12px;
+  position: absolute;
+  top: -5px;
+  right: -1px;
+  border-radius: 10px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  text-align: left;
+  position: relative;
+  font-size: 20px;
+  white-space: pre-line;
+}
+
+/* Close button styling */
+.close-btn {
+  text-align: center;
+  background-color: #ff0000;
+  width: 13%;
+}
+
+/* Close button hover effect */
+.close-btn:hover {
+  background-color: #cc0000;
+}
+
+.circle-small {
+  width: 115px;  /* Reduced width */
+  height: 115px; /* Reduced height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2px;
+  background-color: #566d7a;
+  color: #080702; 
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0056A3; /* Exact blue color from the image */
+}
+
+.header-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0056A3; /* Same blue for subtitle */
+}
+
+.highlight-text {
+  color: #008000; /* Green color used for highlights */
+}
+
+.news-ticker-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.news-scroll {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.news-list {
+  display: flex;
+  animation: scrollNews 50s linear infinite;
+}
+
+.btn1{
+  color: white;
+  background-color: rgb(235, 81, 9);
+}
+
+.btn1:hover{
+  background-color: rgb(228, 101, 42);
+  color: white;
+}
+
+.btn2{
+  color: white;
+  border: 1px solid #F875AA;
+  background-color: #F875AA;
+}
+
+.btn2:hover{
+  background-color: #e76599;
+  color: white;
+}
+
+.btn3{
+  color: white;
+  border: 1px solid #f0ad4e;
+  background-color: #f0ad4e;
+}
+
+.btn3:hover{
+  background-color: #ecb66b;
+  color: white;
+}
+
+.btn4{
+  color: white;
+  border: 1px solid #5bc0de;
+  background-color: #5bc0de;
+}
+
+.btn4:hover{
+  background-color: #578FCA;
+  color: white;
+}
+
+@keyframes scrollNews {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
